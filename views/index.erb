@@ -1,10 +1,14 @@
 <h1>All recipes</h1>
 <% @recipes.each_with_index do |recipe,index| %>
   <li>
+   
+    <%=  ["X"] if recipe.done? =="true" %>
+    <%=  [" "] if recipe.done? =="false" %>
     <%= index + 1  %>:
     <%= recipe.name  %> <a href="/destroy/<%= index %>">Destroy</a>,
     <%= recipe.rating  %>/5,
     <%= recipe.preptime  %>
+    
   </li>
 <% end %>
 
