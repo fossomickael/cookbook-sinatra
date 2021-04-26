@@ -50,6 +50,12 @@ get '/destroy/:index' do
   redirect '/'
 end
 
+get '/mark/:index' do
+  @index = params[:index].to_i
+  cookbook.mark_recipe(@index)
+  redirect '/'
+end
+
 post '/search' do
   @keyword = params[:keyword]
   html_doc = ScrapeAllrecipesService.new(@keyword).call
