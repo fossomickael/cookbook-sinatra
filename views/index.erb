@@ -1,0 +1,13 @@
+<h1>All recipes</h1>
+<% @recipes.each_with_index do |recipe,index| %>
+  <li>
+    <%= index + 1  %>,
+    <%= recipe.name  %> <a href="/destroy/<%= index %>">Destroy</a>,
+    <%= recipe.rating  %>/5,
+    <%= recipe.preptime  %>
+  </li>
+<% end %>
+
+<a href="/new">New</a>
+
+<a href="/import">Import</a>
