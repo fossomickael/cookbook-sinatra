@@ -40,7 +40,7 @@ class Cookbook
 
   def load_recipes
     CSV.foreach(@csv_file_path) do |recipe|
-      @recipes << Recipe.new({name: recipe[0], description: recipe[1], rating: recipe[2], preptime: recipe[3], done: recipe[4] })
+      @recipes << Recipe.new({name: recipe[0], description: recipe[1], rating: recipe[2], preptime: recipe[3], done: recipe[4] == "true" })
     end
   end
 end
