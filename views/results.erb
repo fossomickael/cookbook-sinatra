@@ -1,0 +1,11 @@
+<h1>List recipes</h1>
+<form method="post" action="/add">
+<% @recipes.each_with_index do |recipe,index| %>
+  <div>
+  <input type="radio"  name="url" value="<%= recipe[0]  %>">
+         
+  <label for="url"><%= index + 1  %> <%= recipe[1]  %></label>
+  </div>
+<% end %>
+ <input type="submit" value="Submit">
+</form>
