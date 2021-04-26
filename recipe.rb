@@ -13,6 +13,14 @@ class Recipe
     @done
   end
 
+  def signe
+    if @done
+      return "[X]"
+    else
+      return "[ ]"
+    end
+  end
+
   def mark_as_done
     @done = true
   end

@@ -2,8 +2,8 @@
 <% @recipes.each_with_index do |recipe,index| %>
   <li>
    
-    <%=  ["X"] if recipe.done? =="true" %>
-    <%=  [" "] if recipe.done? =="false" %><a href="/mark/<%= index %>">Mark as done</a>
+    
+    <%= recipe.signe %><a href="/mark/<%= index %>">Mark as done</a>
     <%= index + 1  %>:
     <%= recipe.name  %> <a href="/destroy/<%= index %>">Destroy</a>,
     <%= recipe.rating  %>/5,
